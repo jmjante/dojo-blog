@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import BlogDetails from './components/BlogDetails';
+import Home from './pages/Home';
+import BlogDetails from './pages/BlogDetails';
 import Create from './pages/Create';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFound from './pages/NotFound';
 
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
         <Navbar />
         <div className="content">
           <Routes>
-            <Route path='/' element= {<Home />} ></Route>
-            <Route path='/create' element= {<Create />} ></Route>
-            <Route path='/blogs/:id' element= {<BlogDetails />} ></Route>
+            <Route path='/' element= {<Home />} />
+            <Route path='/create' element= {<Create />} />
+            <Route path='/blogs/:id' element= {<BlogDetails />} />
+            <Route path='*' element = {<NotFound />} />
           </Routes>
         </div>
       </div>      
